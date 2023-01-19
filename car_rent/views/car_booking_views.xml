@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="car_booking_action" model="ir.actions.act_window">
+        <field name="name">Booking</field>
+        <field name="res_model">car.rent.booking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+        </field>
+    </record>
+
+    <record id="car_booking_view_tree" model="ir.ui.view">
+        <field name="name">Booking</field>
+        <field name="model">car.rent.booking</field>
+        <field name="arch" type="xml">
+            <tree string="car_rent">
+                  
+                    <field name="from_date" />
+                    <field name="to_date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="car_booking_form" model="ir.ui.view">
+        <field name="name">Car Booking form</field>
+        <field name="model">car.rent.booking</field>
+        <field name="arch" type="xml">
+            <form string="car_booking">
+                
+                <sheet>
+                    <h1>Booking</h1>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>   
+                    </group>
+                   
+                    <label for="action_check_availability"/>
+                        <div>
+                            <button type="object" name="action_check_availability" string="Check Availabilty" class="oe_highlight"/>
+                        </div>
+                    <label for="action_check_availability"/>    
+                        <div>
+                            <button type="object" name="action_cancel" string="Cancel" class="oe_highlight"/>
+                        </div>
+                                     
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="car_type_action" model="ir.actions.act_window">
+        <field name="name">Types</field>
+        <field name="res_model">car.rent.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+           </field>         
+    </record>
+    <record id="car_type_view_tree" model="ir.ui.view">
+        <field name="name">Types</field>
+        <field name="model">car.rent.type</field>
+        <field name="arch" type="xml">
+            <tree string="car_rent">
+                
+                    <field name="name" />
+                    <field name="description" />
+            </tree>
+        </field>
+    </record>
+    <record id="car_type_form" model="ir.ui.view">
+        <field name="name">Car Type form</field>
+        <field name="model">car.rent.type</field>
+        <field name="arch" type="xml">
+            <form string="car_type">              
+                <sheet>
+                    <h1>Types</h1>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>   
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

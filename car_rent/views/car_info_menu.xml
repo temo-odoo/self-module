@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="car_rent" name="Car Rent">
+        <menuitem id="car_rent_first_level" name="Car Rental Services">
+            <menuitem id="car_rent_model" action="car_info_action" name="Cars" />
+            <menuitem id="car_type_model" action="car_type_action" name="Cars Types" />
+        </menuitem>
+        <menuitem id="car_shcedule_first_level" name="Schedule">
+            <menuitem id="car_booking_model" action="car_booking_action" name="Booking" />
+            <menuitem id="car_reservation_model" action="car_reservation_action" name="Reservation" />
+        </menuitem>
+        <menuitem id="car_customer_first_level" name="Customer">
+            <menuitem id="car_rent_customer_model" action="car_info_action" name="Customer Details" />
+        </menuitem>
+    </menuitem>
+
+</odoo>
+
+<!-- web_icon="car_rent,static/description/icon.png"s -->

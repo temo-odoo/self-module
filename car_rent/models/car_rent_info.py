@@ -8,14 +8,13 @@ class CarRentInfo(models.Model):
     name=fields.Char("Name",required=True)
     license_plate=fields.Char('License Plate')
     postcode=fields.Char('Postcode')
-    location=fields.Char('Location')
+    loc_id=fields.Many2one('car.rent.location',string="Location")
     assignation_date=fields.Date('Assignation Date',copy=False,default=date.today())
-    state=fields.Selection(selection=
-    [('draft','Draft'),('confirm','Confirm'),('deposit','Deposit'),('in progress','In Progress'),('finish','Finish'),('payment done','Payment Done')])
+    available=fields.Boolean('Available')
 #Driver Details
     driver=fields.Boolean('Driver')
     driver_id=fields.Many2one('res.partner','Driver Name')
-
+    
 #Vehicle
     deposit=fields.Integer(string="Deposit")
     last_odometer=fields.Float('Last Odometer', required=True)
@@ -34,7 +33,4 @@ class CarRentInfo(models.Model):
     horse_power=fields.Integer('Horse Power')
     fuel_type=fields.Selection(selection=[('diesel','Diesel'),('petrol','Petrol'),('cng','Cng')])
 
-#Rent Details
-    rent_per_km=fields.Float('Rent Per Km')
-    rent_per_hours=fields.Float('Rent Per Hours')
-    rent_per_day=fields.Float('Rent Per Day')   
+   

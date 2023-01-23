@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="car_info_action" model="ir.actions.act_window">
-        <field name="name">Information</field>
-        <field name="res_model">car.rent.info</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create a New Property Using CREATE Button!!
-            </p>
-           </field>
-           
-    </record>
 
     <record id="car_info_view_tree" model="ir.ui.view">
         <field name="name">Info</field>
@@ -21,7 +10,9 @@
                     <field name="name" />
                     <field name="license_plate" />
                     <field name="postcode" />
-                    <field name="assignation_date" />
+                    <field name="loc_id" />
+                    <field name="available"/>
+                    <button type= "action" name="%(car_booking_action)d" string="Book" class="oe_highlight"/>
             </tree>
         </field>
     </record>
@@ -39,15 +30,16 @@
   
                     <group>
                         <field name="postcode"/>
-                        <field name="location"/>
+                        <field name="loc_id"/>
                         <field name="assignation_date"/>
+                        <field name="available"/>
                     </group>
                     </div>  
                     <group>
                         <group>
                             <group string="DRIVER">
                                 <field name="driver"/>
-                                <field name="driver_id"/>
+                                <field name="driver_id" attrs="{'invisible': [('driver', '=', False)]}"/>
                             </group>                           
                         </group>
 

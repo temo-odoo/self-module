@@ -15,5 +15,7 @@
         'views/car_booking_views.xml',
         'views/car_type_views.xml',
         'views/car_reservation_views.xml',
+        'views/car_location_views.xml',
+        
     ]
 }

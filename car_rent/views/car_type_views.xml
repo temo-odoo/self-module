@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="car_type_action" model="ir.actions.act_window">
-        <field name="name">Types</field>
-        <field name="res_model">car.rent.type</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create a New Property Using CREATE Button!!
-            </p>
-           </field>         
-    </record>
     <record id="car_type_view_tree" model="ir.ui.view">
         <field name="name">Types</field>
         <field name="model">car.rent.type</field>

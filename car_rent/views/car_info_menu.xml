@@ -1,10 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="car_info_action" model="ir.actions.act_window">
+        <field name="name">Information</field>
+        <field name="res_model">car.rent.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+           </field>
+           
+    </record>
+
+    <record id="car_booking_action" model="ir.actions.act_window">
+        <field name="name">Booking</field>
+        <field name="res_model">car.rent.booking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+        </field>
+    </record>
+
+
+    <record id="car_reservation_action" model="ir.actions.act_window">
+        <field name="name">Reservation</field>
+        <field name="res_model">car.rent.reservation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+        </field>
+    </record>
+
+
+    <record id="car_type_action" model="ir.actions.act_window">
+        <field name="name">Types</field>
+        <field name="res_model">car.rent.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+           </field>         
+    </record>
+
+    
+    <record id="car_location_action" model="ir.actions.act_window">
+        <field name="name">Location</field>
+        <field name="res_model">car.rent.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a New Property Using CREATE Button!!
+            </p>
+        </field>     
+    </record>
+
     <menuitem id="car_rent" name="Car Rent">
         <menuitem id="car_rent_first_level" name="Car Rental Services">
             <menuitem id="car_rent_model" action="car_info_action" name="Cars" />
             <menuitem id="car_type_model" action="car_type_action" name="Cars Types" />
+            <menuitem id="car_location_model" action="car_location_action" name="Cars Locations" />
+
         </menuitem>
         <menuitem id="car_shcedule_first_level" name="Schedule">
             <menuitem id="car_booking_model" action="car_booking_action" name="Booking" />
@@ -16,5 +77,3 @@
     </menuitem>
 
 </odoo>
-
-<!-- web_icon="car_rent,static/description/icon.png"s -->

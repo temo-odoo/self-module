@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="estate_property_demo" model="real.estate.properties">
+        <field name="name">Audi</field> 
+        <field name="license_plate">AB123</field>
+        <field name="postcode">3456789</field>
+        <field name="loc_id">A'bad</field>       
+        <field name="available">True</field>   
+        <field name="driver"></field> 
+        <field name="driver_id"></field>
+        <field name="deposit">789</field> 
+    </record>
+    </data>
+</odoo>

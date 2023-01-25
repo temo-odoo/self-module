@@ -11,8 +11,7 @@
                     <field name="license_plate" />
                     <field name="postcode" />
                     <field name="loc_id" />
-                    <field name="available"/>
-                    <button type= "action" name="%(car_booking_action)d" string="Book" class="oe_highlight"/>
+                    <field name="state"/>
             </tree>
         </field>
     </record>
@@ -23,6 +22,9 @@
         <field name="model">car.rent.info</field>
         <field name="arch" type="xml">
             <form string="car_info_form">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable' : 1}"/>
+                </header>
                 <sheet>
                     <div>
                     <h1><field name="name" placeholder="Enter Model Name"/></h1>
@@ -31,8 +33,6 @@
                     <group>
                         <field name="postcode"/>
                         <field name="loc_id"/>
-                        <field name="assignation_date"/>
-                        <field name="available"/>
                     </group>
                     </div>  
                     <group>
@@ -75,9 +75,26 @@
                                         <field name="fuel_type"/>
                                     </group>  
                                 </group>    
+                            </page>                    
+                            <page string="Rent Details"> 
+                                <group>
+                                    <group string="Rent Details">
+                                        <field name="rent_per_km"/>
+                                        <field name="rent_per_hours"/>
+                                        <field name="rent_per_day"/>
+                                    </group>      
+                                </group>    
                             </page>
-                        </notebook>
+                            <page string="Booking">
+                                <field name="booking_ids"/>
+                            </page>
+                        </notebook>            
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                    <field name="activity_ids" />
+               </div>
             </form>
         </field>
     </record>

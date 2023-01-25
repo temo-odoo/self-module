@@ -28,8 +28,7 @@
                             <field name="location_ids">
                                 <tree>
                                     <field name="name"/>
-                                    <field name="license_plate"/>
-                                    <field name="available"/>                                 
+                                    <field name="license_plate"/>                              
                                 </tree>
                             </field>
                         </page>

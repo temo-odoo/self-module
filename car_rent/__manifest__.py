@@ -1,7 +1,7 @@
 {
     'name': "Car Rent",
     'version':'1.0',
-    'depends': ['base'],
+    'depends': ['mail'],
     'author': "Tejas Modi(temo)",
     'category': 'Sales',
     'description': "This is Car Rental portal module",
@@ -14,8 +14,6 @@
         'views/car_info_views.xml',
         'views/car_booking_views.xml',
         'views/car_type_views.xml',
-        'views/car_reservation_views.xml',
-        'views/car_location_views.xml',
         
     ]
 }

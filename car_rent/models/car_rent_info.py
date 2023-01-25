@@ -4,13 +4,15 @@ from datetime import date
 class CarRentInfo(models.Model):
     _name="car.rent.info"
     _description="Car Information"
+     # _rec_name="user_id"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name=fields.Char("Name",required=True)
     license_plate=fields.Char('License Plate')
     postcode=fields.Char('Postcode')
     loc_id=fields.Many2one('car.rent.location',string="Location")
-    assignation_date=fields.Date('Assignation Date',copy=False,default=date.today())
-    available=fields.Boolean('Available')
+    # assignation_date=fields.Datetime('Assignation Date',copy=False,default=date.today())
+    state=fields.Selection(selection=[('available','Available'),('booked','Booked')], default='available',tracking=True)
 #Driver Details
     driver=fields.Boolean('Driver')
     driver_id=fields.Many2one('res.partner','Driver Name')
@@ -33,4 +35,13 @@ class CarRentInfo(models.Model):
     horse_power=fields.Integer('Horse Power')
     fuel_type=fields.Selection(selection=[('diesel','Diesel'),('petrol','Petrol'),('cng','Cng')])
 
-   
+    #Rent Details
+    rent_per_km=fields.Float('Rent Per Km',default = 20.0)
+    rent_per_hours=fields.Float('Rent Per Hours',default = 150.0)
+    rent_per_day=fields.Float('Rent Per Day',default = 2000.0)
+    state=fields.Selection(selection=[('new','New'),('check_booking','Check Booking'),('booked','Booked') ],default='new')
+    booking_ids=fields.One2many("car.rent.booking","info_id")
+
+    _sql_constraints=[
+        ('deposit_constraints', 'CHECK(deposit>=0)', "Price must be Postive")
+    ]

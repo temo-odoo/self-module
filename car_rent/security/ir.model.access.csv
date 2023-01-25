@@ -2,5 +2,4 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 car_information,Car Information,model_car_rent_info,,1,1,1,1
 car_booking,Car Booking,model_car_rent_booking,,1,1,1,1
 car_type,Car Type,model_car_rent_type,,1,1,1,1
-car_reservation,Car Reservation,model_car_rent_reservation,,1,1,1,1
 car_location,Car Location,model_car_rent_location,,1,1,1,1

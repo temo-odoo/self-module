@@ -5,10 +5,15 @@
         <field name="name">Booking</field>
         <field name="model">car.rent.booking</field>
         <field name="arch" type="xml">
-            <tree string="car_rent">
+            <tree string="car_rent" decoration-danger="status=='refused'" decoration-success="status=='accepted'">
                   
                     <field name="from_date" />
                     <field name="to_date" />
+                    <field name="buyer_id"/>
+                    <field name="rent_type"/>
+                    <field name="status" invisible="1"/>
+                    <button type= "object" name="action_accepted" string=" " icon="fa-check"/>
+                    <button type= "object" name="action_refused" string=" " icon="fa-times"/>
             </tree>
         </field>
     </record>
@@ -18,28 +23,28 @@
         <field name="model">car.rent.booking</field>
         <field name="arch" type="xml">
             <form string="car_booking">
-               
+                
                 <sheet>
                     <h1>Booking</h1>
-                    <group>
+                    <group>   
                         <group>
-                            <field name="from_date"/>
+                            <field name="buyer_id"/>
+                        </group>   
+                        <group>
+                            <field name="rent_type"/>
                         </group>
                         <group>
-                            <field name="to_date"/>
-                        </group>   
-                    </group>
-                   
-                    <!-- <label for="action_check_availability"/> -->
-                        <div>
-                            <button type="action" name="%(car_reservation_action)d" string="Check Availabilty" class="oe_highlight"/>
-        
-                        </div>
-                    <!-- <label for="action_check_availability"/>    
-                        <div>
-                            <button type="action"  name="action_cancel" string="Cancel" class="oe_highlight"/>
-                        </div> -->
-                                     
+                            <field name="hours_days" attrs="{'invisible' : [('rent_type','=','days')]}"/>
+                            <field name="date" attrs="{'invisible' : [('rent_type','=','days')]}"/> 
+                            <field name="total_rent"/>
+                        </group>
+                        <group>
+                            <field name="from_date" attrs="{'invisible' : [('rent_type','!=','days')]}"/>
+                        </group>
+                        <group>
+                            <field name="to_date" attrs="{'invisible' : [('rent_type','!=','days')]}"/>
+                        </group> 
+                    </group>            
                 </sheet>
             </form>
         </field>

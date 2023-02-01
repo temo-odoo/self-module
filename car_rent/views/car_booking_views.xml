@@ -25,6 +25,7 @@
             <form string="car_booking">
                 
                 <sheet>
+                   
                     <h1>Booking</h1>
                     <group>   
                         <group>

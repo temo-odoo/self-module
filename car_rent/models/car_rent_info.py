@@ -12,7 +12,7 @@ class CarRentInfo(models.Model):
     postcode=fields.Char('Postcode')
     loc_id=fields.Many2one('car.rent.location',string="Location")
     # assignation_date=fields.Datetime('Assignation Date',copy=False,default=date.today())
-    state=fields.Selection(selection=[('available','Available'),('booked','Booked')], default='available',tracking=True)
+    states=fields.Selection(selection=[('available','Available'),('booked','Booked')], default='available',tracking=True)
 #Driver Details
     driver=fields.Boolean('Driver')
     driver_id=fields.Many2one('res.partner','Driver Name')
@@ -39,7 +39,7 @@ class CarRentInfo(models.Model):
     rent_per_km=fields.Float('Rent Per Km',default = 20.0)
     rent_per_hours=fields.Float('Rent Per Hours',default = 150.0)
     rent_per_day=fields.Float('Rent Per Day',default = 2000.0)
-    state=fields.Selection(selection=[('new','New'),('check_booking','Check Booking'),('booked','Booked') ],default='new')
+    state=fields.Selection(selection=[('new','New'),('booked','Booked') ],default='new',tracking=True)
     booking_ids=fields.One2many("car.rent.booking","info_id")
 
     _sql_constraints=[
